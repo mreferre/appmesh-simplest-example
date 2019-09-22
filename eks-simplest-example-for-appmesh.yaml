@@ -49,6 +49,12 @@ metadata:
   name: nginx
 spec:
   meshName: MESH_NAME
+  virtualRouter:
+    name: nginx-router
+    listeners:
+      - portMapping:
+          port: 80
+          protocol: http
   routes:
     - name: nginx-route
       http:
@@ -67,6 +73,12 @@ metadata:
   name: client
 spec:
   meshName: MESH_NAME
+  virtualRouter:
+    name: client-router
+    listeners:
+      - portMapping:
+          port: 80
+          protocol: http
   routes:
     - name: client-route
       http:
